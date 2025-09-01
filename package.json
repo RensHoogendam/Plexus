@@ -9,7 +9,7 @@
   "commands": [
     {
       "name": "plexus",
-      "title": "Localhost search",
+      "title": "Localhost Search",
       "description": "Search through the running projects in your localhost.",
       "mode": "view"
     }
