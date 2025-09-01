@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "plexus",
   "title": "Plexus",
-  "description": "Search through the running projects in your localhost.",
+  "description": "Discover and manage all running Node.js development servers on your localhost with smart project detection, framework identification, and quick access.",
   "icon": "logo.png",
   "author": "RensHoogendam",
   "license": "MIT",
