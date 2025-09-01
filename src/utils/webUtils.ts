@@ -34,7 +34,7 @@ export async function getPageTitle(url: string): Promise<string | undefined> {
 
     const html = await response.text();
     const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
-    
+
     if (titleMatch && titleMatch[1]) {
       return titleMatch[1].trim();
     }
@@ -44,4 +44,3 @@ export async function getPageTitle(url: string): Promise<string | undefined> {
     return undefined;
   }
 }
-
