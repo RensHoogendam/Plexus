@@ -1,5 +1,6 @@
 module.exports = {
   extends: ["@raycast"],
+  root: true,
   parserOptions: {
     ecmaVersion: 2022,
     sourceType: "module",
@@ -11,4 +12,5 @@ module.exports = {
     node: true,
     es6: true,
   },
+  ignorePatterns: ["dist", "node_modules"],
 };
