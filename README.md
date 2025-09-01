@@ -23,14 +23,14 @@ A powerful Raycast extension that helps you discover and manage all running Node
    - Copy the URL to clipboard
    - Copy the process ID
 
-## 📸 Screenshots
+<!-- ## 📸 Screenshots
 
 The extension displays:
 - **Project Name**: Automatically detected from website title or package.json
 - **Framework**: Detected framework (Next.js, Vite, Express, etc.)
 - **URL**: Full localhost URL with port
 - **Port**: Quick reference to the port number
-- **Favicon**: Website icon for visual identification
+- **Favicon**: Website icon for visual identification -->
 
 ## 🛠️ How It Works
 
