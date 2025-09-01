@@ -23,15 +23,6 @@ A powerful Raycast extension that helps you discover and manage all running Node
    - Copy the URL to clipboard
    - Copy the process ID
 
-<!-- ## 📸 Screenshots
-
-The extension displays:
-- **Project Name**: Automatically detected from website title or package.json
-- **Framework**: Detected framework (Next.js, Vite, Express, etc.)
-- **URL**: Full localhost URL with port
-- **Port**: Quick reference to the port number
-- **Favicon**: Website icon for visual identification -->
-
 ## 🛠️ How It Works
 
 Plexus uses advanced process detection to:
@@ -45,22 +36,6 @@ Plexus uses advanced process detection to:
 - macOS (uses system commands like `lsof` and `ps`)
 - Running Node.js development servers
 - Raycast app
-
-## 📦 Installation
-
-Install directly from the [Raycast Store](https://raycast.com/RensHoogendam/plexus) or:
-
-1. Clone this repository
-2. Open terminal in the project directory
-3. Run `npm install && npm run build`
-4. Import the extension in Raycast
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- Report bugs
-- Suggest new features
-- Submit pull requests
 
 ## 📄 License
 
