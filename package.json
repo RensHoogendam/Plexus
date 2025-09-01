@@ -3,7 +3,7 @@
   "name": "plexus",
   "title": "Plexus",
   "description": "Search through the running projects in your localhost.",
-  "icon": "logo-new.png",
+  "icon": "logo.png",
   "author": "RensHoogendam",
   "license": "MIT",
   "commands": [

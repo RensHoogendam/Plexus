@@ -1,6 +1,6 @@
 # Plexus
 
-<img src="assets/logo-new.png" alt="Plexus Logo" width="128" height="128">
+<img src="assets/logo-big.png" alt="Plexus Logo" width="128" height="128">
 
 A powerful Raycast extension that helps you discover and manage all running Node.js development servers on your localhost.
 
