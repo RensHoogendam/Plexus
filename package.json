@@ -1,16 +1,16 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "localhost-search",
-  "title": "Localhost search",
+  "name": "plexus",
+  "title": "Plexus",
   "description": "Search through the running projects in your localhost.",
-  "icon": "extension-icon.png",
+  "icon": "logo-new.png",
   "author": "RensHoogendam",
   "license": "MIT",
   "commands": [
     {
-      "name": "localhost",
-      "title": "Localhost",
-      "description": "",
+      "name": "plexus",
+      "title": "Localhost search",
+      "description": "Search through the running projects in your localhost.",
       "mode": "view"
     }
   ],
