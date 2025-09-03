@@ -53,9 +53,7 @@ function LocalhostListItem({ item }: { item: LocalhostItem }) {
       icon={favicon ? { source: favicon } : Icon.Globe}
       title={createDisplayName(title || getProjectName(item.projectPath), item.framework)}
       subtitle={item.url}
-      accessories={[
-        { tag: { value: `${item.port}` } },
-      ]}
+      accessories={[{ tag: item.port }]}
       actions={
         <ActionPanel>
           <Action.OpenInBrowser url={item.url} />

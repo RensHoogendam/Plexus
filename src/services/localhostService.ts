@@ -2,24 +2,22 @@ import { LocalhostItem } from "../types/LocalhostItem";
 import { findNodeProcesses, getProcessCommand, getWorkingDirectory } from "../utils/processUtils";
 import { detectFramework, getProjectPath } from "../utils/projectUtils";
 
-
 async function getProcessDetails(pid: string, cmdResult: string) {
   try {
     // Get project information
     const workingDir = await getWorkingDirectory(pid);
     const projectPath = workingDir || getProjectPath(cmdResult);
     const framework = detectFramework(cmdResult);
-  
+
     return {
       workingDir,
       projectPath,
       framework,
-    }
+    };
   } catch {
     return undefined;
   }
 }
-
 
 export async function getLocalhostItems(): Promise<LocalhostItem[]> {
   const output = await findNodeProcesses();
