@@ -5,7 +5,9 @@ export function detectFramework(cmdResult: string): string {
   const frameworks = [
     { pattern: "vite", name: "Vite" },
     { pattern: "next", name: "Next.js" },
+    { pattern: "nuxt", name: "Nuxt" },
     { pattern: "react-scripts", name: "Create React App" },
+    { pattern: "vue-cli-service", name: "Vue CLI" },
     { pattern: "webpack", name: "Webpack Dev Server" },
     { pattern: "express", name: "Express" },
     { pattern: "nodemon", name: "Nodemon" },
