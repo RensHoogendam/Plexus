@@ -51,5 +51,26 @@ export async function getLocalhostItems(): Promise<LocalhostItem[]> {
     });
   }
 
-  return items;
+  return filterWorkerPorts(items);
+}
+
+// Dev servers (Nuxt, Vite, Webpack, ...) spawn helper processes that listen on a
+// random high port in the IANA ephemeral range. Those share the project directory
+// with the real server but should not show up as a separate entry. When a project
+// already has a "real" (non-ephemeral) port, drop its ephemeral ports so the actual
+// dev URL (e.g. localhost:3000) is the one that gets picked up.
+const EPHEMERAL_PORT_START = 49152;
+
+function filterWorkerPorts(items: LocalhostItem[]): LocalhostItem[] {
+  const hasRealPort = new Set<string>();
+  for (const item of items) {
+    if (item.projectPath && parseInt(item.port, 10) < EPHEMERAL_PORT_START) {
+      hasRealPort.add(item.projectPath);
+    }
+  }
+
+  return items.filter((item) => {
+    const isEphemeral = parseInt(item.port, 10) >= EPHEMERAL_PORT_START;
+    return !(isEphemeral && item.projectPath && hasRealPort.has(item.projectPath));
+  });
 }
