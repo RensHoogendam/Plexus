@@ -1,13 +1,32 @@
-# Changelog
+# Plexus Changelog
 
-All notable changes to the Plexus extension will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [1.0.0] - 2025-09-01
+## [1.2.0] - 2026-06-01
 
 ### Added
+
+- Windows support: server discovery, process info, and kill-process now work on Windows (`netstat` for the port list, a lazy `Win32_Process` query for command lines, `taskkill` for killing).
+- Detects servers running inside WSL (enumerated via `wsl.exe` + `/proc`), shown with a `WSL: <distro>` tag and reachable on `localhost`; project names are read over `\\wsl.localhost`, and kill routes through `wsl kill`.
+- Detection is no longer limited to Node.js: Plexus lists any localhost server that answers an HTTP request with an HTML page (Node, PHP/Laravel, Python, etc.) and hides non-web services such as databases.
+
+### Changed
+
+- Faster discovery and instant reopen: per-process lookups are deferred to the few ports that pass the HTTP probe, and results are cached.
+- Cross-platform path handling so project names resolve correctly on Windows and WSL.
+
+### Note
+
+- HTTPS-only dev servers are not detected yet.
+
+## [1.1.0] - 2025-10-01
+
+### Added
+
+- **Kill Process**: Added an action to terminate running processes directly from the Raycast interface with a confirmation dialog.
+
+## [1.0.0] - 2025-09-04
+
+### Added
+
 - **Initial release** of Plexus - Localhost Search extension
 - Smart discovery of running Node.js development servers on localhost
 - Project detection with automatic framework identification
@@ -16,23 +35,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Working directory detection for better project context
 - Clean, modern TypeScript codebase with async/await patterns
 - Comprehensive utility functions for process and project detection
-
----
-
-## Project Overview
-
-**Plexus - Localhost Search** is a Raycast extension that helps developers discover and manage all running Node.js development servers on localhost with smart project detection, framework identification, and quick access.
-
-### Features
-- 🔍 **Smart Discovery** - Automatically finds all running Node.js processes on localhost
-- 📊 **Project Detection** - Identifies project names and frameworks
-- 🚀 **Quick Access** - Jump directly to your development servers
-- 🎯 **Process Management** - View process details and working directories
-
-### Tech Stack
-- **Framework**: Raycast Extension API
-- **Language**: TypeScript
-- **Runtime**: Node.js
-- **Utilities**: Process detection via `lsof` and `ps`
-
----
